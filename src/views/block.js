@@ -72,12 +72,12 @@ export default class Block extends Component {
   fetchTransasctionHashes(ctrl) {
     let block = ctrl.block()
     if (!block) return;
-    m.startComputation()
     this.client.fetchBlockTransactionHashes(block.hash).then((resp) => {
+      m.startComputation()
       ctrl.block_transactions(resp.transactions);
       m.endComputation()
     }, (error) => {
-      throw(error)
+      m.startComputation()
       this.vm.error(error)
       m.endComputation()
     })

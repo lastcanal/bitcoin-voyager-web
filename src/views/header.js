@@ -61,7 +61,7 @@ export default function view(self) {
           <div class="head_icon">G</div>
           {self.vm.socket_connected() ? 'Connected' : 'Connecting'}
         </div>
-        <a href="/"><div class="head_logo">2</div></a>
+        <a href="/?/"><div class="head_logo">2</div></a>
       </div>
     </div>
       <div class="container">
