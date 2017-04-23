@@ -17,7 +17,6 @@ export default class TopPage extends Component {
     ctrl.total_connections = m.prop();
 
     this.getLastHeight(ctrl);
-    this.getTotalConnections(ctrl);
     this.subscribe(ctrl);
   }
 
@@ -44,14 +43,6 @@ export default class TopPage extends Component {
       this.vm.last_height(reply.height);
       m.endComputation()
       this.fetchBlocks(ctrl, reply.height, 12);
-    })
-  }
-
-  getTotalConnections(ctrl) {
-    m.startComputation()
-    this.client.fetchTotalConnections().then((reply) => {
-      ctrl.total_connections(reply.total_connections);
-      m.endComputation()
     })
   }
 

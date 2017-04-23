@@ -2,7 +2,6 @@
   "name": "package",
   "version": "0.0.0",
   "dependencies": {
-    "mithril": "~0.2.0",
     "bitcoinjs-lib": "~2.3.0"
   }
 }
