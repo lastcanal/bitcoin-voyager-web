@@ -74,6 +74,10 @@ export default class VoyagerClient {
     return this.sendRequest('blockchain.history', {address: address})
   }
 
+  fetchBlockchainHistory3(address=null) {
+    return this.sendRequest('blockchain.history3', {address: address})
+  }
+
   fetchTotalConnections() {
     return this.sendRequest('protocol.total_connections', {})
   }

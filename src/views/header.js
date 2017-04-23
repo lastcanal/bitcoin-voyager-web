@@ -57,11 +57,15 @@ export default function view(self) {
           <a onclick={self.navigate('/')} class="head_icon">8</a>
           {self.vm.last_height()}
         </div>
+        <div class="head_stat">
+          <a onclick={self.navigate('/wallet')} class="head_icon">8</a>
+          Wallet
+        </div>
         <div class="head_stat hide">
           <div class="head_icon">G</div>
-          {self.vm.socket_connected() ? 'Connected' : 'Connecting'}
+          {self.vm.socket_connected() ? 'Connectez' : 'Connecting'}
         </div>
-        <a href="/"><div class="head_logo">2</div></a>
+        <a href="/?/"><div class="head_logo">2</div></a>
       </div>
     </div>
       <div class="container">

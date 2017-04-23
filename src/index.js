@@ -8,8 +8,9 @@ import TopPage from './views/top_page'
 import Block from './views/block'
 import Transaction from './views/transaction'
 import Address from './views/address'
+import Wallet from './views/wallet'
 
-let URI = "wss://voyager.cancoin.co/api/v1/websocket"
+let URI = "ws://127.0.0.1:9090/api/v1/websocket"
 
 {
   let view = {}
@@ -35,7 +36,8 @@ let URI = "wss://voyager.cancoin.co/api/v1/websocket"
       top_page: new TopPage(state),
       block: new Block(state),
       transaction: new Transaction(state),
-      address: new Address(state)
+      address: new Address(state),
+      wallet: new Wallet(state)
     }
 
     client.fetchLastHeight()
@@ -75,7 +77,8 @@ let URI = "wss://voyager.cancoin.co/api/v1/websocket"
       "/": view.top_page,
       "/block/:hash": view.block,
       "/tx/:hash": view.transaction,
-      "/address/:address": view.address
+      "/address/:address": view.address,
+      "/wallet": view.wallet
     });
   }
 }

@@ -10,7 +10,7 @@ module.exports = {
         'bootstrap-sass!./bootstrap-sass.config.js'
     ],
     output: {
-        path: path.join(__dirname, 'build'),
+        path: path.join(__dirname, 'build', 'assets'),
         filename: 'bundle.js'
     },
     resolve: { root: [path.join(__dirname, 'bower_components')] },
@@ -24,9 +24,12 @@ module.exports = {
     module: {
         loaders: [
             {
+                test: /\.json?$/,
+                loader: 'json'
+            },
+            {
                 test: /\.js?$/,
-                loader: 'babel',
-                exclude: /(node_modules|bower_components)/
+                loader: 'babel'
             },
             {
                 test: /\.html$/,
